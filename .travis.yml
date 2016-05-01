@@ -3,4 +3,4 @@ language: java
 jdk:
 - oraclejdk8
 script:
-- test/run.sh
+- src/test/resources/run.sh

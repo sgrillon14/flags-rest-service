@@ -1,4 +1,5 @@
 cd $(dirname $0)
+cd ../../..
 
 mvn clean compile
 ret=$?
@@ -14,6 +15,7 @@ exit $ret
 fi
 rm -rf build
 
+cd ../../..
 mvn clean package
 java -jar target/flags-rest-service-0.1.0.jar &
 PID=$!
@@ -24,7 +26,7 @@ kill -9 $PID
 echo "Let's look at the actual results: `cat target/actual.json`"
 echo "And compare it to: `cat ../test/expected.json`"
 
-if diff -w /src/test/resources/expected.json target/actual.json
+if diff -w ../src/test/resources/expected.json target/actual.json
     then
         echo SUCCESS
         let ret=0
