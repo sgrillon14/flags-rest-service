@@ -1,5 +1,10 @@
 package com.sgrillon;
 
+/**
+ * 
+ * @author sgrillon
+ *
+ */
 public class Flags {
 
     private final long id;
