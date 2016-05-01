@@ -1,1 +1,1 @@
-# flags-rest-service
+# flags-rest-service is a rest service to display all flags of the world.
