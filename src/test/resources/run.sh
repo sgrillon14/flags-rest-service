@@ -24,9 +24,9 @@ curl -s http://localhost:8084/flags > target/actual.json
 kill -9 $PID
 
 echo "Let's look at the actual results: `cat target/actual.json`"
-echo "And compare it to: `cat ../test/expected.json`"
+echo "And compare it to: `cat src/test/resources/expected.json`"
 
-if diff -w ../src/test/resources/expected.json target/actual.json
+if diff -w src/test/resources/expected.json target/actual.json
     then
         echo SUCCESS
         let ret=0
