@@ -1,0 +1,5 @@
+spring:
+    application:
+        name: flag
+server:
+    port: 8084
