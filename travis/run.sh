@@ -37,7 +37,7 @@ fi
 rm -rf target
 
 ./gradlew clean build
-java -jar build/libs/gs-rest-service-cors-0.1.0.jar &
+java -jar build/libs/flags-rest-service-0.1.0.jar &
 PID=$!
 sleep 15
 curl -s http://localhost:8084/flags > build/actual.json
