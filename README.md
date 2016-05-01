@@ -12,6 +12,12 @@ Technology
 * Spring Web
 * SVG
 
+Production URL
+----------
+
+http://localhost:8084/flags
+
+
 Licensing
 ---------
 
