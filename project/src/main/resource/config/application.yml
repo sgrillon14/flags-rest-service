@@ -1,0 +1,5 @@
+spring:
+    application:
+        name: flags-rest-service
+server:
+    port: 8084
