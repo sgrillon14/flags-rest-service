@@ -8,12 +8,10 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
 jar {
-    baseName = 'flags-rest-service'
+    baseName = 'gs-rest-service-cors'
     version =  '0.1.0'
 }
 
@@ -26,7 +24,6 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    testCompile("junit:junit")
 }
 
 task wrapper(type: Wrapper) {
