@@ -4,6 +4,7 @@ jdk:
 - oraclejdk8
 before_install:
  - chmod +x complete/gradlew
+ - chmod +x initial/gradlew
  - chmod +x test/run.sh
 script:
 - test/run.sh
