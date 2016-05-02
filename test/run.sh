@@ -1,5 +1,5 @@
 cd $(dirname $0)
-cd ../complete
+cd ../project
 mvn clean package
 java -jar target/gs-rest-service-cors-0.1.0.jar &
 PID=$!
