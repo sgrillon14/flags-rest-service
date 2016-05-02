@@ -1,7 +1,7 @@
 cd $(dirname $0)
 cd ../project
 mvn clean package
-java -jar target/gs-rest-service-cors-0.1.0.jar &
+java -jar target/flags-rest-service-0.1.0.jar &
 PID=$!
 sleep 15
 curl -s http://localhost:8080/greeting > target/actual.json
