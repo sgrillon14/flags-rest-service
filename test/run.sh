@@ -1,7 +1,7 @@
 cd $(dirname $0)
 cd ../project
 mvn clean package
-java -jar target/flags-rest-service-0.1.0.jar &
+java -jar target/flags-rest-service-0.1.0.jar --server.port=8084 &
 PID=$!
 sleep 15
 curl -s http://localhost:8084/greeting > target/actual.json
@@ -37,7 +37,7 @@ fi
 rm -rf target
 
 ./gradlew clean build
-java -jar build/libs/flags-rest-service-0.1.0.jar &
+java -jar build/libs/flags-rest-service-0.1.0.jar --server.port=8084 &
 PID=$!
 sleep 15
 curl -s http://localhost:8084/greeting > build/actual.json
