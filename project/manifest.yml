@@ -7,5 +7,5 @@ applications:
   domain: cfapps.io
   timeout: 180
   buildpack: java_buildpack
-# For Maven target/gs-rest-service-cors-0.1.0.jar
-  path: build/libs/gs-rest-service-cors-0.1.0.jar
+# For Maven target/flags-rest-service-0.1.0.jar
+  path: build/libs/flags-rest-service-0.1.0.jar

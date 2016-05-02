@@ -11,7 +11,7 @@ apply plugin: 'java'
 apply plugin: 'spring-boot'
 
 jar {
-    baseName = 'gs-rest-service-cors'
+    baseName = 'flags-rest-service'
     version =  '0.1.0'
 }
 
