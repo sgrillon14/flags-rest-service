@@ -24,7 +24,7 @@ fi
 
 echo "Let's look at the actual results: `cat target/actual_FR.json`"
 echo "And compare it to: `cat ../test/expected-FR.json`"
-if diff -w ../test/expected-FR.json target/actual_FR.json
+if diff -w ../test/expected-FR-en.json target/actual_FR.json
     then
         echo SUCCESS
         let ret=0
