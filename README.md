@@ -31,6 +31,6 @@ For information, the information for country France , will be the following
 * http://localhost:8084/flags/FR return {"num":250,"alpha2":"FR","alpha3":"FRA","svg":"..."}
 * http://localhost:8084/flags/FRA return {"num":250,"alpha2":"FR","alpha3":"FRA","svg":"..."}
 
-# Licensing
+# License
 
 BSD, See License.txt for details
