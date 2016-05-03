@@ -1,4 +1,4 @@
-package hello;
+package com.sgrillon.flags;
 
 import java.util.concurrent.atomic.AtomicLong;
 
