@@ -23,6 +23,11 @@ public class Flag {
     private String alpha3;
 
     /**
+     * label of country
+     */
+    private String label;
+
+    /**
      * SVG of flag
      */
     private String svg;
@@ -49,6 +54,14 @@ public class Flag {
 
     public void setAlpha3(String alpha3) {
         this.alpha3 = alpha3;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     public String getSvg() {

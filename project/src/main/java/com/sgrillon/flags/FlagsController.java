@@ -33,6 +33,19 @@ public class FlagsController {
         flag.setNum(250);
         flag.setAlpha2("FR");
         flag.setAlpha3("FRA");
+        flag.setLabel("France");
+        flag.setSvg("");
+        return flag;
+    }
+    
+    @CrossOrigin(origins = "http://localhost:9000")
+    @RequestMapping("/flags/{lang}/{name}")
+    public @ResponseBody Flag flag(@PathVariable String lang, @PathVariable String name) {
+        Flag flag = new Flag();
+        flag.setNum(250);
+        flag.setAlpha2("FR");
+        flag.setAlpha3("FRA");
+        flag.setLabel("France");
         flag.setSvg("");
         return flag;
     }
