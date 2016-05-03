@@ -1,11 +1,11 @@
 package hello;
 
-public class Greeting {
+public class flags {
 
     private final long id;
     private final String content;
 
-    public Greeting(long id, String content) {
+    public flags(long id, String content) {
         this.id = id;
         this.content = content;
     }

@@ -9,22 +9,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Controller
-public class GreetingController {
+public class flagsController {
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
     @CrossOrigin(origins = "http://localhost:9000")
-    @RequestMapping("/greeting")
-    public @ResponseBody Greeting greeting(@RequestParam(required=false, defaultValue="World") String name) {
-        System.out.println("==== in greeting ====");
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
-    }
-
-    @RequestMapping("/greeting-javaconfig")
-    public @ResponseBody Greeting greetingWithJavaconfig(@RequestParam(required=false, defaultValue="World") String name) {
-        System.out.println("==== in greeting javaconfig ====");
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    @RequestMapping("/flags")
+    public @ResponseBody flags flags(@RequestParam(required=false, defaultValue="World") String name) {
+        System.out.println("==== in flags ====");
+        return new flags(counter.incrementAndGet(), String.format(template, name));
     }
 
 }
