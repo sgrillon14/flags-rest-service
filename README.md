@@ -8,16 +8,14 @@ For information, the information for country France , will be the following
 * Code ISO 3166-1 alpha2 : FR
 * Code ISO 3166-1 alpha3 : FRA
 
-Travis CI status
-----------
+# Travis CI status
 
 [![Build Status][travis-image]][travis-url]
 [travis-image]: https://travis-ci.org/sgrillon14/flags-rest-service.svg?branch=master
 [travis-url]: https://travis-ci.org/sgrillon14/flags-rest-service
 
 
-Technology
-----------
+# Technology
 
 * HTML
 * CSS
@@ -26,13 +24,13 @@ Technology
 * Spring Web
 * SVG
 
-Production URL
-----------
+# Production URL (Example)
 
-http://localhost:8084/flags
+* http://localhost:8084/flags return a list of countries (in English)
+* http://localhost:8084/flags/250 return {"num":250,"alpha2":"FR","alpha3":"FRA","svg":"..."}
+* http://localhost:8084/flags/FR return {"num":250,"alpha2":"FR","alpha3":"FRA","svg":"..."}
+* http://localhost:8084/flags/FRA return {"num":250,"alpha2":"FR","alpha3":"FRA","svg":"..."}
 
-
-Licensing
----------
+# Licensing
 
 BSD, See License.txt for details
