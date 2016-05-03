@@ -4,13 +4,25 @@ mvn clean package
 java -jar target/flags-rest-service-0.1.0.jar &
 PID=$!
 sleep 15
-curl -s http://localhost:8084/flags > target/actual.json
+curl -s http://localhost:8084/flags > target/actual_flags.json
+curl -s http://localhost:8084/flags/FR > target/actual_FR.json
 kill -9 $PID
 
-echo "Let's look at the actual results: `cat target/actual.json`"
-echo "And compare it to: `cat ../test/expected-first.json`"
+echo "Let's look at the actual results: `cat target/actual_flags.json`"
+echo "And compare it to: `cat ../test/expected-flags.json`"
+if diff -w ../test/expected-flags.json target/actual_flags.json
+    then
+        echo SUCCESS
+        let ret=0
+    else
+        echo FAIL
+        let ret=255
+        exit $ret
+fi
 
-if diff -w ../test/expected-first.json target/actual.json
+echo "Let's look at the actual results: `cat target/actual_FR.json`"
+echo "And compare it to: `cat ../test/expected-FR.json`"
+if diff -w ../test/expected-FR.json target/actual_FR.json
     then
         echo SUCCESS
         let ret=0
