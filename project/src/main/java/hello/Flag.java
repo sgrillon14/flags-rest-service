@@ -1,11 +1,16 @@
 package hello;
 
-public class flags {
+/**
+ * 
+ * @author sgrillon
+ *
+ */
+public class Flag {
 
     private final long id;
     private final String content;
 
-    public flags(long id, String content) {
+    public Flag(long id, String content) {
         this.id = id;
         this.content = content;
     }
