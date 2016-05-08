@@ -23,21 +23,33 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.sgrillon.flags;
+package com.sgrillon.flags.service.impl;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.sgrillon.flags.service.ConverterService;
+import com.sgrillon.flags.service.PngContainer;
 
 /**
  * 
  * @author sgrillon
  *
  */
-@SpringBootApplication
-public class Application {
+@Component
+public class ConverterServiceImpl implements ConverterService {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ConverterServiceImpl.class);
+
+    @Autowired
+    private PngContainer pngContainer;
+
+    @Override
+    public PngContainer svg2png(String countryCode, int width, int height) {
+        LOGGER.debug("svg2png : countryCode[{}], width[{}], height[{}]", countryCode, width, height);
+        pngContainer.convertSvgToPng(countryCode, width, height);
+        return pngContainer;
     }
-
 }

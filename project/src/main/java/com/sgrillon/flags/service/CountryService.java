@@ -23,21 +23,24 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.sgrillon.flags;
+package com.sgrillon.flags.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.List;
+
+import com.sgrillon.flags.model.Country;
 
 /**
  * 
  * @author sgrillon
  *
  */
-@SpringBootApplication
-public class Application {
+public interface CountryService {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
+    /**
+     * 
+     * @param lang: language (en: English, fr: Français)
+     * @return all counties
+     */
+    List<Country> getAll(String lang);
+    
 }

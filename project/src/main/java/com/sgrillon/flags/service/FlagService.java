@@ -23,21 +23,30 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.sgrillon.flags;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+package com.sgrillon.flags.service;
 
 /**
  * 
  * @author sgrillon
  *
  */
-@SpringBootApplication
-public class Application {
+public interface FlagService {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+    /**
+     * 
+     * 
+     * @param countryCode
+     * @return content of SVG picture (String)
+     */
+    String getSvgFlag(String countryCode);
 
+    /**
+     * 
+     * 
+     * @param countryCode
+     * @param width
+     * @param height
+     * @return container (content + error code).
+     */
+    PngContainer getPngFlag(String countryCode, int width, int height);
 }

@@ -23,21 +23,75 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.sgrillon.flags;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+package com.sgrillon.flags.model;
 
 /**
  * 
  * @author sgrillon
  *
  */
-@SpringBootApplication
-public class Application {
+public class Country {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    /**
+     * Code ISO 3166-1 numérique
+     */
+    private int num;
+
+    /**
+     * Code ISO 3166-1 alpha2
+     */
+    private String alpha2;
+
+    /**
+     * Code ISO 3166-1 alpha3
+     */
+    private String alpha3;
+
+    /**
+     * label of country
+     */
+    private String label;
+
+    public Country() {
+    }
+    
+    public Country(int num, String alpha2, String alpha3, String label) {
+        this.num = num;
+        this.alpha2 = alpha2;
+        this.alpha3 = alpha3;
+        this.label = label;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public String getAlpha2() {
+        return alpha2;
+    }
+
+    public void setAlpha2(String alpha2) {
+        this.alpha2 = alpha2;
+    }
+
+    public String getAlpha3() {
+        return alpha3;
+    }
+
+    public void setAlpha3(String alpha3) {
+        this.alpha3 = alpha3;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
 }

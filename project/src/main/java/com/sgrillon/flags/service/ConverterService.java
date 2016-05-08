@@ -23,21 +23,22 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.sgrillon.flags;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+package com.sgrillon.flags.service;
 
 /**
  * 
  * @author sgrillon
  *
  */
-@SpringBootApplication
-public class Application {
+public interface ConverterService {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
+    /**
+     * Convert a SVG picture to PNG.
+     * 
+     * @param countryCode
+     * @param width
+     * @param height
+     * @return container (content + error code).
+     */
+    PngContainer svg2png(String countryCode, int width, int height);
 }

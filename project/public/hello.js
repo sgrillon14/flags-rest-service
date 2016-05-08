@@ -1,9 +1,9 @@
 $(document).ready(function() {
     $.ajax({
-        url: "http://localhost:8080/flags"
+        url: "http://localhost:8084/flags/FR"
     }).then(function(data, status, jqxhr) {
-       $('.flags-id').append(data.id);
-       $('.flags-content').append(data.content);
+       $('.flags-id').append(data.num);
+       $('.flags-content').append(data.alpha2);
        console.log(jqxhr);
     });
 });

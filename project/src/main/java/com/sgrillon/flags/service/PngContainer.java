@@ -23,21 +23,38 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.sgrillon.flags;
+package com.sgrillon.flags.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
 
 /**
  * 
  * @author sgrillon
  *
  */
-@SpringBootApplication
-public class Application {
+public interface PngContainer {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+    /**
+     * Convert a SVG picture to PNG.
+     * 
+     * @param countryCode (country code -> example France : "fr")
+     * @param width
+     * @param height
+     */
+    void convertSvgToPng(String countryCode, int width, int height);
+
+    /**
+     * Return content of PNG picture.
+     * 
+     * @return pngContent
+     */
+    byte[] getPngContent();
+
+    /**
+     * Return error code of PNG picture (200 : no error, 400 : height or width less than or equal to 0, 404 : Country code does not exist)
+     * 
+     * @return errorCode
+     */
+    HttpStatus getErrorCode();
 
 }
