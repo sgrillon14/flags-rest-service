@@ -24,6 +24,10 @@ For information, the information for country France , will be the following
 * Spring Web
 * SVG
 
+# Run Anywhere
+![RunAnywhere](/screenshots/plateforme.png)
+Flags REST Service apps run anywhere the JVM does. Deploy standalone, in an app server, on a Cloud or all of the above.
+
 # Production URL (Example)
 
 * http://localhost:8084/flags return a list of countries (in English)
