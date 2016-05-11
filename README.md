@@ -31,10 +31,14 @@ Flags REST Service apps run anywhere the JVM does. Deploy standalone, in an app 
 
 # Production URL (Example)
 
-* http://localhost:8084/flags return a list of countries (in English)
-* http://localhost:8084/flags/250 return {"num":250,"alpha2":"FR","alpha3":"FRA","svg":"..."}
-* http://localhost:8084/flags/FR return {"num":250,"alpha2":"FR","alpha3":"FRA","svg":"..."}
-* http://localhost:8084/flags/FRA return {"num":250,"alpha2":"FR","alpha3":"FRA","svg":"..."}
+use cases:
+* http://localhost:8084/countries return a list of countries (in English) [{"num":4,"alpha2":"AF","alpha3":"AFG","label":"Afghanistan"}, ...]
+* http://localhost:8084/countries?lang=en return a list of countries (in English)
+* http://localhost:8084/countries?lang=fr return a list of countries (in French)
+* http://localhost:8084/fr return 200 OK and svg (French flag)
+Errors cases:
+* http://localhost:8084/countries?lang=fakecode return a list of countries (in English)
+* http://localhost:8084/fakecode return 204 No Content
 
 # License
 
