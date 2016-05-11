@@ -35,18 +35,18 @@ public interface FlagService {
     /**
      * 
      * 
-     * @param countryCode
+     * @param countryAlpha2Code
      * @return content of SVG picture (String)
      */
-    String getSvgFlag(String countryCode);
+    String getSvgFlag(String countryAlpha2Code);
 
     /**
      * 
      * 
-     * @param countryCode
+     * @param countryAlpha2Code
      * @param width
      * @param height
      * @return container (content + error code).
      */
-    PngContainer getPngFlag(String countryCode, int width, int height);
+    PngContainer getPngFlag(String countryAlpha2Code, int width, int height);
 }

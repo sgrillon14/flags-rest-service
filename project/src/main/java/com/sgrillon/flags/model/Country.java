@@ -33,7 +33,7 @@ package com.sgrillon.flags.model;
 public class Country {
 
     /**
-     * Code ISO 3166-1 numérique
+     * Code ISO 3166-1 numerical
      */
     private int num;
 
@@ -53,6 +53,10 @@ public class Country {
     private String label;
 
     public Country() {
+        this.num = 0;
+        this.alpha2 = "";
+        this.alpha3 = "";
+        this.label = "";
     }
     
     public Country(int num, String alpha2, String alpha3, String label) {

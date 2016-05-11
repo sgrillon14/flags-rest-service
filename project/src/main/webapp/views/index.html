@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="FlagsApp">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="../lib/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="../lib/angular/angular.js"></script>
+<script type="text/javascript" src="../services/flags.services.js" type="text/javascript"></script>
+<script type="text/javascript" src="../controller/controller.js"></script>
+
+<link rel='stylesheet' href="../css/bootstrap/css/bootstrap.css"></link>
+
+</head>
+<body>
+	<div ng-controller="FlagsCtrl">
+		
+		<h3 id="title">Select a lang:</h3>
+		<select ng-model="lang" ng-change="changeLang();">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+		
+		<h3 id="title">All countries:</h3>
+		<table>
+		    <tr ng-repeat="country in countries" ng-switch on="$index % 3">
+		        <td ng-switch-when="0">
+		            {{countries[$index].num}} {{countries[$index].label}} <br> <img height="40" weight="60" ng-src="{{getFlag(countries[$index].alpha2)}}"></img>
+		        </td>
+		        <span ng-show="countries[$index+1]">
+		            <td ng-switch-when="0">
+		                {{countries[$index+1].num}} {{countries[$index+1].label}} <br> <img height="40" weight="60" ng-src="{{countries[$index+1].alpha2?getFlag(countries[$index+1].alpha2):null}}"></img>
+		            </td>
+		        </span>    
+		        <span ng-show="countries[$index+2]">    
+		            <td ng-switch-when="0">
+		                {{countries[$index+2].num}} {{countries[$index+2].label}} <br> <img height="40" weight="60" ng-src="{{countries[$index+2].alpha2?getFlag(countries[$index+2].alpha2):null}}"></img>
+		            </td>
+		        </span>
+		    </tr>
+		</table>
+
+	</div>
+
+</body>
+</html>

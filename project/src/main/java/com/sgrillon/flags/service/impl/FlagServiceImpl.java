@@ -52,21 +52,21 @@ public class FlagServiceImpl implements FlagService {
     private ConverterService converterService;
 
     @Override
-    public String getSvgFlag(String countryCode) {
-        LOGGER.debug("getSvgFlag : countryCode[{}]", countryCode);
-        return this.getSvgContent(countryCode);
+    public String getSvgFlag(String countryAlpha2Code) {
+        LOGGER.debug("getSvgFlag : countryAlpha2Code[{}]", countryAlpha2Code);
+        return this.getSvgContent(countryAlpha2Code);
     }
 
     @Override
-    public PngContainer getPngFlag(String countryCode, int width, int height) {
-        LOGGER.debug("getPngFlag : countryCode[{}], width[{}], height[{}]", countryCode, width, height);
-        return converterService.svg2png(countryCode, width, height);
+    public PngContainer getPngFlag(String countryAlpha2Code, int width, int height) {
+        LOGGER.debug("getPngFlag : countryAlpha2Code[{}], width[{}], height[{}]", countryAlpha2Code, width, height);
+        return converterService.svg2png(countryAlpha2Code, width, height);
     }
 
-    protected String getSvgContent(String countryCode) {
-        LOGGER.debug("getSvgContent : countryCode[{}]", countryCode);
+    protected String getSvgContent(String countryAlpha2Code) {
+        LOGGER.debug("getSvgContent : countryAlpha2Code[{}]", countryAlpha2Code);
         ClassLoader classLoader = getClass().getClassLoader();
-        InputStream input = classLoader.getResourceAsStream(this.convertCountryCodeToPartialPath(countryCode));
+        InputStream input = classLoader.getResourceAsStream(this.convertCountryCodeToPartialPath(countryAlpha2Code));
         try {
             if (input == null) {
                 return null;
