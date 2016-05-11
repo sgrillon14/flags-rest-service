@@ -87,7 +87,7 @@ public class FlagsController {
     public ResponseEntity<String> getFlag(@PathVariable String countryAlpha2Code) {
         LOGGER.debug("getFlag : countryAlpha2Code[{}]", countryAlpha2Code);
         String flag = flagService.getSvgFlag(countryAlpha2Code);
-        return Optional.ofNullable(flag).map(result -> new ResponseEntity<>(result, HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return Optional.ofNullable(flag).map(result -> new ResponseEntity<>(result, HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NO_CONTENT));
     }
 
 }
