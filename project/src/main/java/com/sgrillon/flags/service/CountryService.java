@@ -25,6 +25,7 @@
  */
 package com.sgrillon.flags.service;
 
+import java.net.MalformedURLException;
 import java.util.List;
 
 import com.sgrillon.flags.model.Country;
@@ -40,7 +41,8 @@ public interface CountryService {
      * 
      * @param lang: language (en: English, fr: Français)
      * @return all counties
+     * @throws MalformedURLException
      */
-    List<Country> getAll(String lang);
+    List<Country> getAll(String lang) throws MalformedURLException;
     
 }

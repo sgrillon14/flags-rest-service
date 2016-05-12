@@ -25,6 +25,7 @@
  */
 package com.sgrillon.flags.rest;
 
+import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -66,11 +67,12 @@ public class FlagsController {
      * 
      * @param lang
      * @return all countries (Code ISO 3166-1 numerical, Code ISO 3166-1 alpha2, Code ISO 3166-1 alpha3, label of country) in a list.
+     * @throws MalformedURLException 
      */
     // @CrossOrigin(origins = "http://localhost:9000")
     @CrossOrigin
     @RequestMapping(value = "/countries", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody List<Country> getCountries(@RequestParam(value = "lang", defaultValue = "en") String lang) {
+    public @ResponseBody List<Country> getCountries(@RequestParam(value = "lang", defaultValue = "en") String lang) throws MalformedURLException {
         LOGGER.debug("Get countries:  lang[{}]", lang);
         return countryService.getAll(lang);
     }
