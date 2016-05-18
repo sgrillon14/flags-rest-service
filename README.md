@@ -19,7 +19,7 @@ These are the currently supported languages
 * Italian
 * Dutch
 	
-	Does flags-rest-service not support your language? Please help us with a PR!
+Does flags-rest-service not support your language? Please help us with a PR!
 
 # Travis CI status
 
