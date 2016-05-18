@@ -33,7 +33,7 @@ Does flags-rest-service not support your language? Please help us with a PR!
 * HTML
 * CSS
 * AngularJS 1
-* Spring Boot <font color="red">Caution: This application use 1.4.0.BUILD-SNAPSHOT</font>
+* Spring Boot <b style='color:red'>(Caution: This application use 1.4.0.BUILD-SNAPSHOT)</b>
 * Spring Web
 * SVG
 
