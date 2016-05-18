@@ -36,6 +36,8 @@ Does flags-rest-service not support your language? Please help us with a PR!
 * Spring Boot <b style='color:red'>(Caution: This application use 1.4.0.BUILD-SNAPSHOT)</b>
 * Spring Web
 * SVG
+* TestNG
+* Travis CI
 
 # Run Anywhere
 ![RunAnywhere](/screenshots/plateforme.png)
