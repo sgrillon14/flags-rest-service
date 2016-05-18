@@ -10,8 +10,15 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.3.3.RELEASE</version>
+		<version>1.4.0.BUILD-SNAPSHOT</version>
 	</parent>
+
+	<description>This REST Web service contains 241 countries complies with ISO 3166-1. The country name is available in several languages (French and English for now). The Web service also included the 3 digit code of the country, the 2-letter code (used in many applications, including monetary applications ) and the 3-letter code.</description>
+	<url>https://github.com/sgrillon14/flags-rest-service</url>
+	<organization>
+		<name>Stéphane GRILLON</name>
+		<url>http://sgrillon14.github.io</url>
+	</organization>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -29,22 +36,9 @@
 		<!-- Batik -->
 		<dependency>
 			<groupId>batik</groupId>
-		    <artifactId>batik-transcoder</artifactId>
-		    <version>1.6-1</version>
-<!-- 			<exclusions> -->
-<!-- 				<exclusion> -->
-<!-- 					<artifactId>fop</artifactId> -->
-<!-- 					<groupId>fop</groupId> -->
-<!-- 				</exclusion> -->
-<!-- 			</exclusions> -->
+			<artifactId>batik-transcoder</artifactId>
+			<version>1.6-1</version>
 		</dependency>
-
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.apache.xmlgraphics</groupId> -->
-<!-- 			<artifactId>xmlgraphics-commons</artifactId> -->
-<!-- 			<version>2.1</version> -->
-<!-- 		</dependency> -->
-
 
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -58,7 +52,55 @@
 			<version>2.11.0</version>
 		</dependency>
 
+		<!-- Test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8.13</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+
+	<!-- Add Spring repositories because I use 1.4.0.BUILD-SNAPSHOT version instead of .RELEASE version-->
+	<!-- 1.3.5.RELEASE version (May, 2016) -->
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<build>
 		<plugins>
