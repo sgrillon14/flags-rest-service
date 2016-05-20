@@ -46,6 +46,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sgrillon.flags.model.Country;
 import com.sgrillon.flags.service.CountryService;
 import com.sgrillon.flags.service.FlagService;
+import com.sgrillon.flags.service.PngContainer;
 
 /**
  * 
@@ -53,6 +54,7 @@ import com.sgrillon.flags.service.FlagService;
  *
  */
 @Controller
+@RequestMapping("/flags/api")
 public class FlagsController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FlagsController.class);
@@ -67,7 +69,7 @@ public class FlagsController {
      * 
      * @param lang
      * @return all countries (Code ISO 3166-1 numerical, Code ISO 3166-1 alpha2, Code ISO 3166-1 alpha3, label of country) in a list.
-     * @throws MalformedURLException 
+     * @throws MalformedURLException
      */
     // @CrossOrigin(origins = "http://localhost:9000")
     @CrossOrigin
@@ -86,10 +88,23 @@ public class FlagsController {
     // @CrossOrigin(origins = "http://localhost:9000")
     @CrossOrigin
     @RequestMapping(value = "/{countryAlpha2Code}", method = RequestMethod.GET, produces = "image/svg+xml")
-    public ResponseEntity<String> getFlag(@PathVariable String countryAlpha2Code) {
-        LOGGER.debug("getFlag : countryAlpha2Code[{}]", countryAlpha2Code);
+    public ResponseEntity<String> getSvgFlag(@PathVariable String countryAlpha2Code) {
+        LOGGER.debug("getSvgFlag : countryAlpha2Code[{}]", countryAlpha2Code);
         String flag = flagService.getSvgFlag(countryAlpha2Code);
         return Optional.ofNullable(flag).map(result -> new ResponseEntity<>(result, HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NO_CONTENT));
+    }
+
+    /**
+     * 
+     * 
+     * @param countryAlpha2Code
+     * @return picture of flag (png file)
+     */
+    @RequestMapping(value = "/{countryAlpha2Code}/{width}/{height}", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
+    public @ResponseBody ResponseEntity<byte[]> getPngFlag(@PathVariable String countryAlpha2Code, @PathVariable int width, @PathVariable int height) {
+        LOGGER.debug("getSvgFlag : countryAlpha2Code[{}], width[{}], height[{}]", countryAlpha2Code, width, height);
+        PngContainer pngContainer = flagService.getPngFlag(countryAlpha2Code, width, height);
+        return Optional.ofNullable(pngContainer).map(result -> new ResponseEntity<>(result.getPngContent(), HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NO_CONTENT));
     }
 
 }

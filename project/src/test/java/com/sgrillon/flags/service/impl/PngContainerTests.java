@@ -38,36 +38,27 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
 
-import com.sgrillon.flags.service.FlagService;
 import com.sgrillon.flags.service.PngContainer;
 
 /**
- * Basic unit tests for FlagService.
+ * Basic unit tests for PngContainerTests.
  * 
  * @author sgrillon
  *
  */
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @DirtiesContext
-public class FlagServiceImplTests  extends AbstractTestNGSpringContextTests {
-
+public class PngContainerTests extends AbstractTestNGSpringContextTests {
+    
     @Autowired
-    private FlagService flagService;
+    private PngContainer pngContainer;
 
     @Test
-    public void testGetSvgContentWithFr() {
-        String expectedSvgContent = "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"480\" width=\"640\" version=\"1\">\n  <g fill-rule=\"evenodd\" stroke-width=\"1pt\">\n    <path fill=\"#fff\" d=\"M0 0h640v480H0z\"/>\n    <path fill=\"#00267f\" d=\"M0 0h213.337v480H0z\"/>\n    <path fill=\"#f31830\" d=\"M426.662 0H640v480H426.662z\"/>\n  </g>\n</svg>\n";
-        String actualSvgContent = flagService.getSvgFlag("fr");
-        assertThat(actualSvgContent).isEqualTo(expectedSvgContent);
-    }
-    
-    @Test
-    public void testGetPngContentWithFr() throws IOException {
+    public void testGetSvgContentWithFr() throws IOException {
         byte[] expectedPngContent = IOUtils.toByteArray(getClass().getClassLoader().getResourceAsStream("flags/fr_40_40.png"));
-        PngContainer actualPngContent = flagService.getPngFlag("fr", 40, 40);
-        System.out.println("sgr code " + actualPngContent.getErrorCode());
-        assertThat(actualPngContent.getErrorCode()).isEqualTo(HttpStatus.OK);
-        assertThat(actualPngContent.getPngContent()).isEqualTo(expectedPngContent);
+        pngContainer.convertSvgToPng("fr", 40, 40);
+        assertThat(expectedPngContent.equals(pngContainer.getPngContent()));
+        assertThat(pngContainer.getErrorCode() == HttpStatus.OK);
     }
-    
+
 }
