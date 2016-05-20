@@ -83,7 +83,7 @@ public class PngContainerImpl implements PngContainer {
         if (inputStream == null) {
             LOGGER.error("Exception caught during the conversion svg to png : countryCode {} doesn't match", countryCode);
             pngContent = null;
-            errorCode = HttpStatus.NOT_FOUND;
+            errorCode = HttpStatus.NO_CONTENT;
             return;
         }
         input = new TranscoderInput(inputStream);

@@ -104,7 +104,7 @@ public class FlagsController {
     public @ResponseBody ResponseEntity<byte[]> getPngFlag(@PathVariable String countryAlpha2Code, @PathVariable int width, @PathVariable int height) {
         LOGGER.debug("getSvgFlag : countryAlpha2Code[{}], width[{}], height[{}]", countryAlpha2Code, width, height);
         PngContainer pngContainer = flagService.getPngFlag(countryAlpha2Code, width, height);
-        return Optional.ofNullable(pngContainer).map(result -> new ResponseEntity<>(result.getPngContent(), HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NO_CONTENT));
+        return Optional.ofNullable(pngContainer.getPngContent()).map(result -> new ResponseEntity<>(result, HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NO_CONTENT));
     }
 
 }
