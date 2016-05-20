@@ -52,14 +52,16 @@ UX (AngularJS 1):
 ![sampleAngularjs1](/screenshots/sampleAngularjs1.png)
 
 use cases:
-* http://localhost:8084/countries return a list of countries (in English) 
-* http://localhost:8084/countries?lang=en return a list of countries (in English)
-* http://localhost:8084/countries?lang=fr return a list of countries (in French)
-* http://localhost:8084/fr return 200 OK and svg (French flag)
+* http://localhost:8084/flags/api/countries return a list of countries (in English) 
+* http://localhost:8084/flags/api/countries?lang=en return a list of countries (in English)
+* http://localhost:8084/flags/api/countries?lang=fr return a list of countries (in French)
+* http://localhost:8084/flags/api/fr return 200 OK and svg (French flag)
+* http://localhost:8084/flags/api/fr/40/40 return 200 OK and png (French flag)
 
 Errors cases:
-* http://localhost:8084/countries?lang=fakecode return a list of countries (in English)
-* http://localhost:8084/fakecode return 204 No Content
+* http://localhost:8084/flags/api/countries?lang=fakecode return a list of countries (in English)
+* http://localhost:8084/flags/api/fakecode return 204 No Content
+* http://localhost:8084/flags/api/fakecode/40/40 return 204 No Content
 
 # JSON response (Example)
 
