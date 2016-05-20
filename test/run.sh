@@ -1,7 +1,7 @@
 cd $(dirname $0)
 cd ../project
 mvn clean package
-java -jar target/flags-rest-service-0.1.0.jar &
+java -jar target/flags-rest-service-0.1.1.jar &
 PID=$!
 sleep 15
 curl -s http://localhost:8084/flags/api/countries > target/actual_countries.json
