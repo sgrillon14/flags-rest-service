@@ -71,8 +71,7 @@ public class FlagsController {
      * @return all countries (Code ISO 3166-1 numerical, Code ISO 3166-1 alpha2, Code ISO 3166-1 alpha3, label of country) in a list.
      * @throws MalformedURLException
      */
-    // @CrossOrigin(origins = "http://localhost:9000")
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:8085")
     @RequestMapping(value = "/countries", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody List<Country> getCountries(@RequestParam(value = "lang", defaultValue = "en") String lang) throws MalformedURLException {
         LOGGER.debug("Get countries:  lang[{}]", lang);
@@ -85,8 +84,6 @@ public class FlagsController {
      * @param countryAlpha2Code
      * @return content of SVG picture (String)
      */
-    // @CrossOrigin(origins = "http://localhost:9000")
-    @CrossOrigin
     @RequestMapping(value = "/{countryAlpha2Code}", method = RequestMethod.GET, produces = "image/svg+xml")
     public ResponseEntity<String> getSvgFlag(@PathVariable String countryAlpha2Code) {
         LOGGER.debug("getSvgFlag : countryAlpha2Code[{}]", countryAlpha2Code);
