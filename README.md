@@ -63,6 +63,16 @@ Errors cases:
 * http://localhost:8084/flags/api/fakecode return 204 No Content
 * http://localhost:8084/flags/api/fakecode/40/40 return 204 No Content
 
+UX (sample CORS with public_client in 8085 server):
+* http://localhost:8085
+
+![CORSOK](/screenshots/CORS_OK.png)
+
+UX (sample CORS with public_client out 8085 server):
+* http://localhost:xxxx
+
+![CORSKO](/screenshots/CORS_KO.png)
+
 # JSON response (Example)
 
 [...,{"num":250,"alpha2":"FR","alpha3":"FRA","label":"France"},...]
