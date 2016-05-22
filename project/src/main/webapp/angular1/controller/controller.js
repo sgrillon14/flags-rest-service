@@ -1,8 +1,9 @@
-angular.module("FlagsApp", ['pascalprecht.translate'])
+angular.module("FlagsApp", ['pascalprecht.translate', 'ngSanitize'])
 .config(["$translateProvider", function($translateProvider) {
     $translateProvider.useLoader('$translatePartialLoader', {
         urlTemplate: '{part}_{lang}.json'
     });
+    $translateProvider.useSanitizeValueStrategy('escape');
 }])
 .factory('FlagsServices',FlagsServices)
 .controller("FlagsCtrl",
