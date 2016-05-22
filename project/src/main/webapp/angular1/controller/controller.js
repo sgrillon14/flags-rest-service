@@ -3,7 +3,6 @@ angular.module("FlagsApp", ['pascalprecht.translate'])
     $translateProvider.useLoader('$translatePartialLoader', {
         urlTemplate: '{part}_{lang}.json'
     });
-
 }])
 .factory('FlagsServices',FlagsServices)
 .controller("FlagsCtrl",
