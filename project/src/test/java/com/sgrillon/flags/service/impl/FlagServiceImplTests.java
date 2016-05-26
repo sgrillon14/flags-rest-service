@@ -56,7 +56,7 @@ public class FlagServiceImplTests  extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetSvgContentWithFr() {
-        String expectedSvgContent = "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"480\" width=\"640\" version=\"1\">\r\n  <g fill-rule=\"evenodd\" stroke-width=\"1pt\">\r\n    <path fill=\"#fff\" d=\"M0 0h640v480H0z\"/>\r\n    <path fill=\"#00267f\" d=\"M0 0h213.337v480H0z\"/>\r\n    <path fill=\"#f31830\" d=\"M426.662 0H640v480H426.662z\"/>\r\n  </g>\r\n</svg>\r\n";
+        String expectedSvgContent = "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"480\" width=\"640\" version=\"1\">\n  <g fill-rule=\"evenodd\" stroke-width=\"1pt\">\n    <path fill=\"#fff\" d=\"M0 0h640v480H0z\"/>\n    <path fill=\"#00267f\" d=\"M0 0h213.337v480H0z\"/>\n    <path fill=\"#f31830\" d=\"M426.662 0H640v480H426.662z\"/>\n  </g>\n</svg>\n";
         String actualSvgContent = flagService.getSvgFlag("fr");
         assertThat(actualSvgContent).isEqualTo(expectedSvgContent);
     }
