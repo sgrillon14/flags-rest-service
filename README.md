@@ -48,7 +48,7 @@ Flags REST Service apps run anywhere the JVM does. Deploy standalone, in an app 
 # Production URL (Example)
 
 UX (AngularJS 1):
-* http://localhost:8084/views/index.html
+* http://localhost:8084/angular1/views/index.html
 
 ![sampleAngularjs1](/screenshots/sampleAngularjs1.png)
 
