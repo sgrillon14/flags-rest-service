@@ -27,6 +27,8 @@ Does flags-rest-service not support your language? Please help us with a PR!
 [travis-image]: https://travis-ci.org/sgrillon14/flags-rest-service.svg?branch=master
 [travis-url]: https://travis-ci.org/sgrillon14/flags-rest-service
 
+# Gitter chat
+[![Join the chat at https://gitter.im/sgrillon14/flags-rest-service](https://badges.gitter.im/sgrillon14/flags-rest-service.svg)](https://gitter.im/sgrillon14/flags-rest-service?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Technology
 
