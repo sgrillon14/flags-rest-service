@@ -6,6 +6,24 @@
 	<groupId>org.springframework</groupId>
 	<artifactId>flags-rest-service</artifactId>
 	<version>0.1.1</version>
+    
+    <name>flags-rest-service</name>
+    <url>https://github.com/sgrillon14/flags-rest-service</url>
+
+	<developers>
+		<developer>
+			<id>sgrillon14</id>
+			<name>Stéphane GRILLON</name>
+			<email>sgrillon@hotmail.fr</email>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>BSD license</name>
+			<comments>All source code is under the BSD license.</comments>
+		</license>
+	</licenses>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
