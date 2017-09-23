@@ -80,7 +80,7 @@ UX (sample CORS with public_client out 8085 server):
 
 # License
 
-BSD, See License.txt for details
+[![license](https://img.shields.io/github/license/sgrillon14/flags-rest-service.svg)](https://github.com/sgrillon14/flags-rest-service/blob/master/LICENSE), See LICENSE for details
 
 # Contributing
 
