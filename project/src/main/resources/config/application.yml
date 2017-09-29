@@ -3,3 +3,13 @@ spring:
         name: flags-rest-service
 server:
     port: 8084
+management:
+    port:8088
+    address: localhost
+    security:
+        enabled: true
+        role: SUPERUSER
+security:
+    user:
+        name: admin
+        password: secret
