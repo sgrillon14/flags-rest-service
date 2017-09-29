@@ -4,6 +4,9 @@ mvn clean package
 java -jar target/flags-rest-service-3.0.0-SNAPSHOT.jar &
 PID=$!
 sleep 15
+
+curl -u admin:secret -s http://localhost:8088/health > target/health.json
+
 curl -s http://localhost:8084/flags/api/countries > target/actual_countries.json
 curl -s http://localhost:8084/flags/api/countries?lang=en > target/actual_countries_EN.json
 curl -s http://localhost:8084/flags/api/countries?lang=fr > target/actual_countries_FR.json
