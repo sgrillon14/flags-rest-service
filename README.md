@@ -36,6 +36,7 @@ Does flags-rest-service not support your language? Please help us with a PR!
 * AngularJS 2 in progress...
 * Spring Boot
 * Spring Web
+* Spring Actuator
 * SVG
 * TestNG
 * Travis CI
@@ -77,6 +78,10 @@ UX (sample CORS with public_client out 8085 server):
 # JSON response (Example)
 
 [...,{"num":250,"alpha2":"FR","alpha3":"FRA","label":"France"},...]
+
+# Spring Boot Actuator
+
+* http://localhost:8088/health (CAUTION: login/password) return {"status":"UP"}
 
 # License
 
